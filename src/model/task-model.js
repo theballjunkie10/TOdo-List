@@ -16,12 +16,6 @@ export default class TasksModel{
         this.#boardtasks=value;
     }
 
-     clearTasks(){
-        this.#boardtasks=this.#boardtasks.filter(task=>task.status!=='basket');
-        this._notifyObservers();
-        return this.#boardtasks;
-    }
-
     addTask(title){
         const newTask={
             title,
@@ -32,6 +26,14 @@ export default class TasksModel{
         console.log(`Iris: ${length}`)
         this._notifyObservers();
         return newTask;
+    }
+    updateTaskStatus(taskId, newStatus){
+        const task= this.#boardtasks.find(task => task.id === taskId)
+        if (task) {
+            console.log(`task status: ${task.status} new status ${newStatus}`);
+            task.status=newStatus.status_title;
+            this._notifyObservers();
+        }
     }
     addObserver(observer){
         this.#observers.push(observer);
