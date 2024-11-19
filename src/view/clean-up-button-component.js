@@ -1,4 +1,5 @@
 import {createElement} from '../framework/render.js';
+import { AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createCleanUpButton(){
     return (`
@@ -6,16 +7,16 @@ function createCleanUpButton(){
         `);
 }
 
-export default class CleanUpButtonComponent{
-    getTemplate(){
+export default class CleanUpButtonComponent extends AbstractComponent{
+    get template(){
         return createCleanUpButton();
     }
-    getElement(){
-        if(!this.element){
-            this.element=createElement(this.getTemplate());
-        }
-        return this.element;
-    }
+    // get element(){
+    //     if(!this.element){
+    //         this.element=createElement(this.getTemplate());
+    //     }
+    //     return this.element;
+    // }
     removeElement(){
         this.element=null;
     }

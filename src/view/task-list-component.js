@@ -1,32 +1,37 @@
 import {createElement} from '../framework/render.js';
+import { AbstractComponent } from '../framework/view/abstract-component.js';
 
-
-function createTaskListComponent() {
+function createTaskListComponent(status) {
+  const {status_title, label}=status;
     return (
-        `<div><ul id="tasklist">
-                <div id="list_title">Название блока</div>
-                <li>Название первой задачи</li>
-                <li>Название первой задачи</li>
-                <li>Название первой задачи</li>
-          </ul></div>`
+        `<article>
+        <h3>${label}</h3>
+        <div id="tasklist_${status_title}"></div>
+        </article>`
       );
 }
 
 
-export default class TaskListComponent {
-  getTemplate() {
-    return createTaskListComponent();
+export default class TaskListComponent extends AbstractComponent{
+  
+  constructor({task_status}){
+    super();
+    this.status=task_status;
+  }
+  get template() {
+    //console.log(`heat waves: ${this.status.status_title}`);
+    return createTaskListComponent(this.status);
   }
 
 
-  getElement() {
-    if (!this.element) {
-      this.element = createElement(this.getTemplate());
-    }
+  // get element() {
+  //   if (!this.element) {
+  //     this.element = createElement(this.getTemplate());
+  //   }
 
 
-    return this.element;
-  }
+  //   return this.element;
+  // }
 
 
   removeElement() {
