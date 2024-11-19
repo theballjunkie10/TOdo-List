@@ -11,7 +11,6 @@ function createEmptyTaskComponent(){
 
 export default class EmptyTaskComponent extends AbstractComponent{
 
-
     get template(){
         return createEmptyTaskComponent();
     }

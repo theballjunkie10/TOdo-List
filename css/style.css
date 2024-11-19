@@ -137,7 +137,7 @@ ul li{
   border: none;
   display: table-row;
 }
-#task_name{
+#add-task{
   border-style: solid;
   border-width: 0.5px;
   border-color: lightgray;
