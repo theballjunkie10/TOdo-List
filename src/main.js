@@ -5,7 +5,7 @@ import TaskListComponent from './view/task-list-component.js';
 
 const bodyContainer = document.querySelector('.board-app');
 const formContainer = document.querySelector('.add-task');
-const taskListContainer = document.querySelector('.tasks');
+const taskListContainer = document.querySelector('.taskboard');
 
 
 render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);

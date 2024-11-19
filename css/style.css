@@ -27,7 +27,7 @@ h1{
 }
 section.tasks div{
   display: grid;
-  grid-template-columns: 10% 10% 10% 20%;
+  grid-template-columns: 10% 10% 10% 10%;
   gap: 50px;
   margin-top: 20px;
   /* column-count: 4;
@@ -56,6 +56,30 @@ ul li{
   border-radius: 5px;
   border-style: hidden hidden hidden solid;
   border-width: thin thin thin 5px;
+}
+.task--view{
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  list-style-type:none;
+  border-radius: 5px;
+  border-style: hidden hidden hidden solid;
+  border-width: thin thin thin 5px;
+}
+.task__edit{
+  background-color: rgb(181, 103, 103);
+  border-radius: 4px;
+  padding: 5px;
+  width: 50px;
+  height: 20px;
+  color: white;
+  border: none;
+  margin-top: 10px;
 }
 #backlog li{
   border-left-color: lightgray;
@@ -101,6 +125,8 @@ ul li{
   width: 200px;
   color: white;
   border: none;
+  height: 20px;
+  margin-top: 20px;
 }
 #add_button{
   background-color: rgb(33, 127, 204);
@@ -120,8 +146,10 @@ ul li{
   margin: 10px 10px 0px 0px;
   padding: 5px;
 }
-.tasks{
+.taskboard{
   display: flex;
+  gap: 50px;
+  margin: 20px;
 }
 
 
@@ -137,5 +165,9 @@ ul li{
 #tasklist li{
   border-left-color: lightgray;
 }
-
+.task__edit{
+  /* padding: 10px; */
+  text-align: center;
+  width: 80px;
+}
 /* add-task__button button */
